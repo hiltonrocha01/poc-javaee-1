@@ -9,7 +9,7 @@ public class TestEndpoint extends Application {
 
 	@GET
 	public String getOrders() {
-		return "returning all orders";
+		return "HELLO WORLD FROM REST";
 	}
 
 }
