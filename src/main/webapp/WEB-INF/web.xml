@@ -20,4 +20,14 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>olaMundoServlet</servlet-name>
+		<servlet-class>br.com.aevc.servlet.ServletExample</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>olaMundoServlet</servlet-name>
+		<url-pattern>/olaMundoServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

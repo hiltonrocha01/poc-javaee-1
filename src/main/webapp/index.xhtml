@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
 <head>
-<meta charset="ISO-8859-1"></meta>
+<meta charset="UTF-8" />
 <title>Insert title here</title>
 </head>
-<body>
 
-	<div>
-	<h1>HELLO WORLD FROM JSF</h1>
-	</div>
-	
-</body>
+<h:body>
+
+	<h:outputText value="#{helloWorldMB.message}"></h:outputText>
+
+</h:body>
+
 </html>
