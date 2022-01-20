@@ -12,7 +12,24 @@
 
 <h:body>
 
-	<h:outputText value="#{helloWorldMB.message}"></h:outputText>
+
+	<h:form>
+
+		<h:link
+			value="login"
+			outcome="login/login"
+			rendered="#{loginMB.loggedUser == null}" />
+
+		<h:commandLink
+			value="logout"
+			action="#{loginMB.logout}" 
+			rendered="#{loginMB.loggedUser != null}"/>
+
+	</h:form>
+
+	<h:outputLabel
+		value="Logado como: #{loginMB.loggedUser.name}"
+		rendered="#{loginMB.loggedUser != null}" />
 
 </h:body>
 

@@ -1,4 +1,4 @@
-package br.com.aevc.rs;
+package br.com.aevc.example.rs;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

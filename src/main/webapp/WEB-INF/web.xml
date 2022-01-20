@@ -21,12 +21,12 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>olaMundoServlet</servlet-name>
+		<servlet-name>olaMundoServlet</servlet-name> <!-- ID -->
 		<servlet-class>br.com.aevc.servlet.ServletExample</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>olaMundoServlet</servlet-name>
+		<servlet-name>olaMundoServlet</servlet-name> <!-- ID -->
 		<url-pattern>/olaMundoServlet</url-pattern>
 	</servlet-mapping>
 	

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+
+<h:body>
+
+
+	<h:form>
+
+		<h:outputLabel
+			value="Usuário: "
+			for="userName" />
+		<h:inputText
+			id="userName"
+			value="#{loginFormMB.userName}" />
+
+		<h:outputLabel value="Password: " />
+		<h:inputSecret
+			id="password"
+			value="#{loginFormMB.password}" />
+
+		<h:commandButton
+			value="Login"
+			actionListener="#{loginMB.login}"
+			action="#{loginMB.redirect}">
+			<f:attribute
+				name="userName"
+				value="#{loginFormMB.userName}" />
+			<f:attribute
+				name="password"
+				value="#{loginFormMB.password}" />
+		</h:commandButton>
+		<!-- EXPRESSION LAGUANGE -->
+
+	</h:form>
+
+</h:body>
+
+</html>
