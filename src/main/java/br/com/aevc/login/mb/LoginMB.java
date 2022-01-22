@@ -34,6 +34,7 @@ public class LoginMB implements Serializable {
 	public void login(ActionEvent actionEvent) {
 		User user = this.loginService.login(getAttribute(actionEvent, "userName"),
 				getAttribute(actionEvent, "password"));
+		
 		this.loggedUser = new LoggedUserVO(user.getName());
 		this.logged = true;
 

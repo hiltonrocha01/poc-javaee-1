@@ -20,12 +20,18 @@
 			for="userName" />
 		<h:inputText
 			id="userName"
-			value="#{loginFormMB.userName}" />
+			value="#{loginFormMB.userName}"
+			required="true"
+			requiredMessage="Usuário obrigatório!" />
+		<h:message for="userName" style="color:red;"/>
 
 		<h:outputLabel value="Password: " />
 		<h:inputSecret
 			id="password"
-			value="#{loginFormMB.password}" />
+			value="#{loginFormMB.password}"
+			required="true"
+			requiredMessage="Senha obrigatória!" />
+		<h:message for="password" style="color:red;" />
 
 		<h:commandButton
 			value="Login"
