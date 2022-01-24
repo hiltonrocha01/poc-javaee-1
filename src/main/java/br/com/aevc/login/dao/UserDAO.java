@@ -4,6 +4,6 @@ import br.com.aevc.login.domain.entity.User;
 
 public interface UserDAO {
 
-	User findByLogin(String userName);
+	User findByLogin(String login);
 
 }

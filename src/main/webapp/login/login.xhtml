@@ -17,29 +17,54 @@
 
 		<h:outputLabel
 			value="Usuário: "
-			for="userName" />
+			for="login" />
 		<h:inputText
-			id="userName"
-			value="#{loginFormMB.userName}"
+			id="login"
+			value="#{loginFormMB.login}"
 			required="true"
-			requiredMessage="Usuário obrigatório!" />
-		<h:message for="userName" style="color:red;"/>
+			requiredMessage="Usuário obrigatório!">
+			<f:validator
+				validatorId="cpfValidator"
+				for="login"></f:validator>
+		</h:inputText>
+		<h:message
+			for="login"
+			style="color:red;" />
 
-		<h:outputLabel value="Password: " for="password" />
+		<h:outputLabel
+			value="Password: "
+			for="password" />
 		<h:inputSecret
 			id="password"
 			value="#{loginFormMB.password}"
 			required="true"
 			requiredMessage="Senha obrigatória!" />
-		<h:message for="password" style="color:red;" />
+		<h:message
+			for="password"
+			style="color:red;" />
+
+		<h:selectOneMenu
+			id="profiles"
+			value="#{loginFormMB.profile}"
+			label="Perfil"
+			required="true"
+			requiredMessage="Perfil é obritatório!">
+			<f:selectItem
+				noSelectionOption="true"
+				itemLabel="Selecione" />
+			<f:selectItems
+				value="#{loginFormMB.profiles}"
+				var="profile"
+				itemValue="#{profile}" />
+		</h:selectOneMenu>
 
 		<h:commandButton
 			value="Login"
 			actionListener="#{loginMB.login}"
 			action="#{loginMB.redirect}">
 			<f:attribute
-				name="userName"
-				value="#{loginFormMB.userName}" />
+				name="login"
+				value="#{loginFormMB.login}" />
 			<f:attribute
 				name="password"
 				value="#{loginFormMB.password}" />

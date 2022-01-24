@@ -15,6 +15,7 @@ public class User {
 	private Long id;
 	private String login;
 	private String password;
+	private String profile;
 
 	public User() {
 	}
@@ -54,6 +55,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
 }

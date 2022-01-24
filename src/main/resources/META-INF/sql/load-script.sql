@@ -1,1 +1,1 @@
-INSERT INTO PUBLIC.User_ (id, login, password) VALUES (1, 'admin', '123456789');
+INSERT INTO PUBLIC.User_ (id, login, password, profile) VALUES (1, '04225778126', '123456789', 'ADMIN');
