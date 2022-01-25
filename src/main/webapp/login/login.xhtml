@@ -12,7 +12,6 @@
 
 <h:body>
 
-
 	<h:form>
 
 		<h:outputLabel
@@ -57,6 +56,9 @@
 				var="profile"
 				itemValue="#{profile}" />
 		</h:selectOneMenu>
+		<h:message
+			for="profiles"
+			style="color:red;" />
 
 		<h:commandButton
 			value="Login"

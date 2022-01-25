@@ -1,9 +1,13 @@
 package br.com.aevc.login.domain.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,9 +17,14 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(nullable = false)
 	private String login;
+	@Column(nullable = false)
 	private String password;
 	private String profile;
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "personId", referencedColumnName = "id")
+	private Person person;
 
 	public User() {
 	}
@@ -63,6 +72,14 @@ public class User {
 
 	public void setProfile(String profile) {
 		this.profile = profile;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
 }
