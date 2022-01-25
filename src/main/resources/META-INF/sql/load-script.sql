@@ -1,2 +1,15 @@
+INSERT INTO PUBLIC.Profile (id, name, active) VALUES (1, 'ADMIN', true);
+INSERT INTO PUBLIC.Profile (id, name, active) VALUES (2, 'MANAGER', true);
+INSERT INTO PUBLIC.Profile (id, name, active) VALUES (3, 'SUPERVISOR', true);
+INSERT INTO PUBLIC.Profile (id, name, active) VALUES (4, 'CLERK', true);
+INSERT INTO PUBLIC.Menu (id, name, url, active) VALUES (1, 'Usuário', '/usuarios', true);
+INSERT INTO PUBLIC.Menu (id, name, url, active) VALUES (2, 'Produto', '/produtos', true);
+INSERT INTO PUBLIC.Menu (id, name, url, active) VALUES (3, 'Venda', '/vendas', true);
+INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (1, 1);
+INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (1, 2);
+INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (2, 1);
+INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (2, 2);
+INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (3, 1);
+INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (3, 2);
 INSERT INTO PUBLIC.Person (id, fullName, document, birthDate, createdAt) VALUES (1, 'Albert Edmélio Viana Costa', '04225778126', '1994-02-01', CURRENT_TIMESTAMP());
-INSERT INTO PUBLIC.User_ (id, login, password, profile, personId) VALUES (1, '04225778126', '123456789', 'ADMIN', 1);
+INSERT INTO PUBLIC.User_ (id, login, password, profileId, personId) VALUES (1, '04225778126', '123456789', 1, 1);

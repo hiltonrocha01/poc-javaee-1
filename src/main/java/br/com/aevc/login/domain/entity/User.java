@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,7 +22,9 @@ public class User {
 	private String login;
 	@Column(nullable = false)
 	private String password;
-	private String profile;
+	@ManyToOne
+	@JoinColumn(name = "profileId", referencedColumnName = "id")
+	private Profile profile;
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "personId", referencedColumnName = "id")
 	private Person person;
@@ -66,11 +69,11 @@ public class User {
 		this.password = password;
 	}
 
-	public String getProfile() {
+	public Profile getProfile() {
 		return profile;
 	}
 
-	public void setProfile(String profile) {
+	public void setProfile(Profile profile) {
 		this.profile = profile;
 	}
 
