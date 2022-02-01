@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.aevc.login.domain.ProfileEnum;
+import br.com.aevc.login.service.ProfileService;
+import br.com.aevc.login.service.exception.BusinessException;
+import br.com.aevc.login.service.exception.SystemException;
 
 /**
  * @author alber
@@ -18,13 +21,21 @@ public class LoginFormMB {
 
 	private String login;
 	private String password;
-	private ProfileEnum profile;
+	private String profile;
 
-	private List<ProfileEnum> profiles;
+	private List<String> profiles;
+	@Inject
+	private ProfileService profileService;
 
 	@PostConstruct
 	public void init() {
-		this.profiles = List.of(ProfileEnum.ADMIN);
+		try {
+			this.profiles = this.profileService.getAllProfileNames();
+		} catch (SystemException e) {
+			this.profiles = List.of();
+		} catch (BusinessException e) {
+			this.profiles = List.of();
+		}
 	}
 
 	public String getLogin() {
@@ -43,16 +54,20 @@ public class LoginFormMB {
 		this.password = password;
 	}
 
-	public ProfileEnum getProfile() {
+	public String getProfile() {
 		return profile;
 	}
 
-	public void setProfile(ProfileEnum profile) {
+	public void setProfile(String profile) {
 		this.profile = profile;
 	}
 
-	public List<ProfileEnum> getProfiles() {
+	public List<String> getProfiles() {
 		return profiles;
+	}
+
+	public void setProfiles(List<String> profiles) {
+		this.profiles = profiles;
 	}
 
 }

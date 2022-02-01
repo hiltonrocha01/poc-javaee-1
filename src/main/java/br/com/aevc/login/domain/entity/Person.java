@@ -26,6 +26,7 @@ public class Person {
 	private LocalDateTime createdAt;
 	@Column(columnDefinition = "TIMESTAMP")
 	private LocalDateTime updatedAt;
+	
 	@OneToOne(mappedBy = "person")
 	private User user;
 

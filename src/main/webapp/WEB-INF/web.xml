@@ -22,12 +22,16 @@
 	
 	<servlet>
 		<servlet-name>olaMundoServlet</servlet-name> <!-- ID -->
-		<servlet-class>br.com.aevc.servlet.ServletExample</servlet-class>
+		<servlet-class>br.com.aevc.example.servlet.ServletExample</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>olaMundoServlet</servlet-name> <!-- ID -->
-		<url-pattern>/olaMundoServlet</url-pattern>
+		<url-pattern>/exemplo</url-pattern>
 	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
 	
 </web-app>

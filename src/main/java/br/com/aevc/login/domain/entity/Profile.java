@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Profile {
@@ -20,6 +21,8 @@ public class Profile {
 	private String name;
 	@Column(nullable = false, columnDefinition = "boolean default true")
 	private boolean active;
+	@OneToMany(mappedBy = "profile", fetch = FetchType.LAZY)
+	private List<User> users;
 	@ManyToMany(mappedBy = "profiles", fetch = FetchType.LAZY)
 	private List<Menu> menus;
 

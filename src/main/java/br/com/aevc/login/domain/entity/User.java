@@ -13,21 +13,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "User_")
+//USER É UMA PALAVRA RESERVADA PARA O SQL
+//SELECT FROM WHERE 
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(nullable = false)
+	//VARCHAR
+	//NÃO NULA
 	private String login;
 	@Column(nullable = false)
 	private String password;
+	
 	@ManyToOne
 	@JoinColumn(name = "profileId", referencedColumnName = "id")
 	private Profile profile;
+	// N -> 1
+	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "personId", referencedColumnName = "id")
 	private Person person;
+	
+	//RELACIONAMENTO ENTRE TABELAS
+	
+	
 
 	public User() {
 	}

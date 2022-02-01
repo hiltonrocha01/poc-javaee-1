@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html
 	lang="pt-br"
 	xmlns="http://www.w3.org/1999/xhtml"
@@ -24,25 +25,12 @@
 		</h:dataTable>
 
 	</h:panelGrid>
-
 	<h:form>
-
-		<h:link
-			value="login"
-			outcome="login/login"
-			rendered="#{loginMB.loggedUser == null}" />
-
-		<h:commandLink
-			value="logout"
-			action="#{loginMB.logout}"
-			rendered="#{loginMB.loggedUser != null}" />
-
-	</h:form>
-
-	<h:outputText
-		value="Logado como: #{loginMB.loggedUser.name}"
-		rendered="#{loginMB.loggedUser != null}" />
-
+		
+		<h:outputLabel  for="nome" value="Nome"/>
+		<h:inputText id="nome" value="DIGITE AQUI"/>
+		
+	</h:form>	
 </h:body>
 
 </html>

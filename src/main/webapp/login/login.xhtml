@@ -12,6 +12,8 @@
 
 <h:body>
 
+	<h:messages globalOnly="true" showDetail="true"></h:messages>
+
 	<h:form>
 
 		<h:outputLabel
@@ -22,9 +24,11 @@
 			value="#{loginFormMB.login}"
 			required="true"
 			requiredMessage="Usuário obrigatório!">
+
 			<f:validator
 				validatorId="cpfValidator"
 				for="login"></f:validator>
+
 		</h:inputText>
 		<h:message
 			for="login"

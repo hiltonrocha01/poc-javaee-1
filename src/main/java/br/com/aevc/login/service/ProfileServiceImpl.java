@@ -1,25 +1,24 @@
 package br.com.aevc.login.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 
-import br.com.aevc.login.dao.UserDAO;
-import br.com.aevc.login.domain.entity.User;
+import br.com.aevc.login.dao.ProfileDAO;
 import br.com.aevc.login.service.exception.BusinessException;
 import br.com.aevc.login.service.exception.SystemException;
 
-public class LoginServiceImpl implements LoginService {
-
-	private static final long serialVersionUID = -5736213823999199217L;
+public class ProfileServiceImpl implements ProfileService {
 
 	@Inject
-	private UserDAO userDAO;
+	private ProfileDAO profileDAO;
 
 	@Override
-	public User login(String login, String password) throws SystemException, BusinessException {
+	public List<String> getAllProfileNames() throws SystemException, BusinessException {
 		try {
-			return this.userDAO.findByLogin(login);
+			return this.profileDAO.findAllProfileNames();
 		} catch (NoResultException e) {
 			throw new SystemException("Usuário não encontrado.", e);
 		} catch (PersistenceException e) {

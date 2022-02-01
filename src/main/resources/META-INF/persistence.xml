@@ -7,6 +7,7 @@
 	<persistence-unit name="poc-javaee-pu"
 		transaction-type="RESOURCE_LOCAL">
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:h2:mem:poc-javaee" />
@@ -19,7 +20,12 @@
 				value="drop-and-create" />
 			<property name="javax.persistence.sql-load-script-source"
 				value="META-INF/sql/load-script.sql" />
+			<property name="eclipselink.logging.level.sql" value="FINEST"/>
+			<property name="eclipselink.logging.level" value="FINEST" />
+ 			<property name="eclipselink.logging.parameters" value="true"/>
+ 			<property name="logging.level" value="INFO"/>
 		</properties>
+		
 	</persistence-unit>
 
 </persistence>
