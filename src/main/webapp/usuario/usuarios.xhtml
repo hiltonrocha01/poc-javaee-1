@@ -19,18 +19,53 @@
 			var="menu">
 			<h:column>
 
-				<a href="/poc-javaee#{menu.url}" >#{menu.name}</a>
+
+				<!-- 				<a href="#{request.contextPath}#{menu.url}">#{menu.name}</a> -->
+
+				<h:link
+					outcome="#{menu.url}"
+					value="#{menu.name}" />
 
 			</h:column>
 		</h:dataTable>
 
 	</h:panelGrid>
-	<h:form>
-		
-		<h:outputLabel  for="nome" value="Nome"/>
-		<h:inputText id="nome" value="DIGITE AQUI"/>
-		
-	</h:form>	
+
+	<h:panelGrid>
+
+		<h:dataTable
+			value="#{userMB.users}"
+			var="user">
+
+			<h:head>
+				Nome
+			</h:head>
+			<h:head>
+				Documento
+			</h:head>
+			<h:head>
+				Data de Nascimento
+			</h:head>
+
+			<h:column>
+				#{user.name}
+			</h:column>
+			<h:column>
+				#{user.document}
+			</h:column>
+			<h:column>
+				#{user.birthDate}
+			</h:column>
+		</h:dataTable>
+
+	</h:panelGrid>
+
+	<h:panelGrid>
+		<h:link
+			outcome="/usuario/insert"
+			value="Inserir" />
+	</h:panelGrid>
+
 </h:body>
 
 </html>

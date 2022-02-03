@@ -4,10 +4,10 @@ import javax.inject.Inject;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 
-import br.com.aevc.login.dao.UserDAO;
 import br.com.aevc.login.domain.entity.User;
 import br.com.aevc.login.service.exception.BusinessException;
 import br.com.aevc.login.service.exception.SystemException;
+import br.com.aevc.user.dao.UserDAO;
 
 public class LoginServiceImpl implements LoginService {
 

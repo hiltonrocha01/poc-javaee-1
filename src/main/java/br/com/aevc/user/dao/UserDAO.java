@@ -1,4 +1,4 @@
-package br.com.aevc.login.dao;
+package br.com.aevc.user.dao;
 
 import javax.persistence.LockTimeoutException;
 import javax.persistence.NoResultException;
