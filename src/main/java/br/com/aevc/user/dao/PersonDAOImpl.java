@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 import br.com.aevc.user.domain.PersonListingDTO;
+import br.com.aevc.user.domain.entity.Person;
 
 public class PersonDAOImpl implements PersonDAO {
 
@@ -19,6 +21,14 @@ public class PersonDAOImpl implements PersonDAO {
 		return this.entityManager.createQuery(
 				" SELECT new br.com.aevc.user.domain.PersonListingDTO(person.fullName, person.document, person.birthDate) FROM Person person ",
 				PersonListingDTO.class).getResultList();
+	}
+
+	@Override
+	public void insert(Person person) {
+		EntityTransaction transaction = this.entityManager.getTransaction();
+		transaction.begin();
+		this.entityManager.persist(person);
+		transaction.commit();
 	}
 
 }

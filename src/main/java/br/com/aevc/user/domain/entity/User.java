@@ -1,4 +1,4 @@
-package br.com.aevc.login.domain.entity;
+package br.com.aevc.user.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import br.com.aevc.login.domain.entity.Profile;
 
 @Entity
 @Table(name = "User_")
@@ -36,10 +38,6 @@ public class User {
 	@JoinColumn(name = "personId", referencedColumnName = "id")
 	private Person person;
 	
-	//RELACIONAMENTO ENTRE TABELAS
-	
-	
-
 	public User() {
 	}
 

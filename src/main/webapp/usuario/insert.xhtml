@@ -8,10 +8,11 @@
 
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Poc JavaEE</title>
 </head>
 
 <h:body>
+
 
 	<h:panelGrid rendered="#{loginMB.loggedUser != null}">
 		<h:dataTable
@@ -33,7 +34,37 @@
 
 	<h:panelGrid>
 
+		<h:form>
 
+			<h:outputLabel
+				for="fullName"
+				value="Nome completo: " />
+			<h:inputText
+				id="fullName"
+				value="#{userFormMB.newUserDTO.fullName}" />
+
+			<h:outputLabel
+				for="document"
+				value="Documento: " />
+			<h:inputText
+				id="document"
+				value="#{userFormMB.newUserDTO.document}" />
+
+			<h:outputLabel
+				for="birthDate"
+				value="Data Nascimento: " />
+			<h:inputText
+				id="birthDate"
+				value="#{userFormMB.newUserDTO.birthDate}">
+			</h:inputText>
+			
+			<h:outputLabel
+				for="password"
+				value="Senha: " />
+			<h:inputSecret id="password" value="#{userFormMB.newUserDTO.password}"/>
+		
+			<h:commandButton action="#{userFormMB.save}" />
+		</h:form>
 
 	</h:panelGrid>
 

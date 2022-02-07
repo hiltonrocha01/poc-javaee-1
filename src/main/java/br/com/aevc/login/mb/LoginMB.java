@@ -16,10 +16,10 @@ import javax.servlet.http.HttpSession;
 
 import br.com.aevc.login.domain.LoggedUserVO;
 import br.com.aevc.login.domain.MenuVO;
-import br.com.aevc.login.domain.entity.User;
 import br.com.aevc.login.service.LoginService;
 import br.com.aevc.login.service.exception.BusinessException;
 import br.com.aevc.login.service.exception.SystemException;
+import br.com.aevc.user.domain.entity.User;
 
 /**
  * @author alber

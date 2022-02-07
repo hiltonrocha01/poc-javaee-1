@@ -8,7 +8,6 @@ import javax.inject.Named;
 
 import br.com.aevc.user.domain.PersonListingDTO;
 import br.com.aevc.user.service.PersonService;
-import br.com.aevc.user.service.UserService;
 
 @Named
 @RequestScoped

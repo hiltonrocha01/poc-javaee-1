@@ -8,11 +8,11 @@ import javax.persistence.PessimisticLockException;
 import javax.persistence.QueryTimeoutException;
 import javax.persistence.TransactionRequiredException;
 
-import br.com.aevc.login.domain.entity.User;
+import br.com.aevc.user.domain.entity.User;
 
 public interface UserDAO {
 
-	User findByLogin(String login)
+	User findBy(String login)
 			throws NoResultException, NonUniqueResultException, IllegalStateException, QueryTimeoutException,
 			TransactionRequiredException, PessimisticLockException, LockTimeoutException, PersistenceException;
 

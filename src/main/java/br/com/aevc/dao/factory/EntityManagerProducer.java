@@ -1,4 +1,4 @@
-package br.com.aevc.login.dao.factory;
+package br.com.aevc.dao.factory;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
