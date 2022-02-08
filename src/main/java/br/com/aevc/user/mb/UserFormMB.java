@@ -13,7 +13,7 @@ public class UserFormMB {
 
 	@Inject
 	private PersonService personService;
-
+	
 	private NewUserDTO newUserDTO = new NewUserDTO();
 
 	public String save() {

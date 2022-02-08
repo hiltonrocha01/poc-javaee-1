@@ -2,8 +2,8 @@ package br.com.aevc.user.dao;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import br.com.aevc.user.domain.PersonListingDTO;
@@ -11,7 +11,7 @@ import br.com.aevc.user.domain.entity.Person;
 
 public class PersonDAOImpl implements PersonDAO {
 
-	@Inject
+	@PersistenceContext(name = "poc-javaee")
 	private EntityManager entityManager;
 
 	@Override
@@ -24,10 +24,9 @@ public class PersonDAOImpl implements PersonDAO {
 	}
 
 	@Override
+	@Transactional
 	public void insert(Person person) {
 		this.entityManager.persist(person);
-		//SALVAR NO BANCO
-		
 	}
 
 }

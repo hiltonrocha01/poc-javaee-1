@@ -2,12 +2,12 @@ package br.com.aevc.login.dao;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 public class ProfileDAOImpl implements ProfileDAO {
 
-	@Inject
+	@PersistenceContext(name = "poc-javaee")
 	private EntityManager entityManager;
 
 	@Override

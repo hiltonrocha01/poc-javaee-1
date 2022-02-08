@@ -2,14 +2,14 @@ package br.com.aevc.user.dao;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import br.com.aevc.user.domain.entity.User;
 
 public class UserDAOImpl implements UserDAO {
 
-	@Inject
+	@PersistenceContext(name = "poc-javaee")
 	private EntityManager entityManager;
 
 	@Override
