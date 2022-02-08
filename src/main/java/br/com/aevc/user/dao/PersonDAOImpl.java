@@ -26,7 +26,9 @@ public class PersonDAOImpl implements PersonDAO {
 	@Override
 	@Transactional
 	public void insert(Person person) {
+		
 		this.entityManager.persist(person);
+		
 	}
 
 }

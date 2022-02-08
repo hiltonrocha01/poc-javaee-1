@@ -1,6 +1,5 @@
 package br.com.aevc.user.service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class PersonServiceImpl implements PersonService {
 		Person person = new Person();
 		person.setFullName(newUserDTO.getFullName());
 		person.setDocument(newUserDTO.getDocument());
-		person.setBirthDate(LocalDate.parse(newUserDTO.getBirthDate()));
+		person.setBirthDate(newUserDTO.getBirthDate());
 		person.setCreatedAt(LocalDateTime.now());
 		
 		User user = new User();
