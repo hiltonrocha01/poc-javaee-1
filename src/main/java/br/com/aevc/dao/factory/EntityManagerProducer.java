@@ -11,7 +11,7 @@ public class EntityManagerProducer {
 	@Produces
 	@ApplicationScoped
 	public EntityManagerFactory createEntityManagerFactory() {
-		return Persistence.createEntityManagerFactory("poc-javaee-pu");
+		return Persistence.createEntityManagerFactory("poc-javaee");
 	}
 
 	@Produces

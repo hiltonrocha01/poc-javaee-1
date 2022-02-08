@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
+import javax.transaction.Transactional;
 
 import br.com.aevc.user.domain.PersonListingDTO;
 import br.com.aevc.user.domain.entity.Person;
@@ -25,10 +25,9 @@ public class PersonDAOImpl implements PersonDAO {
 
 	@Override
 	public void insert(Person person) {
-		EntityTransaction transaction = this.entityManager.getTransaction();
-		transaction.begin();
 		this.entityManager.persist(person);
-		transaction.commit();
+		//SALVAR NO BANCO
+		
 	}
 
 }
