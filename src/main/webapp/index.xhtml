@@ -10,43 +10,10 @@
 <meta charset="UTF-8" />
 <title>Poc JavaEE</title>
 </head>
-
 <h:body>
 
-
-	<h:panelGroup>
-
-		<ui:fragment rendered="#{loginMB.loggedUser != null}">
-			<ui:repeat
-				var="menu"
-				value="#{loginMB.loggedUser.menus}">
-				<h:link
-					outcome="#{menu.url}"
-					value="#{menu.name}" />
-			</ui:repeat>
-
-			<h:outputText
-				value="Logado como: #{loginMB.loggedUser.name}"
-				rendered="#{loginMB.loggedUser != null}" />
-		</ui:fragment>
-
-		<h:form>
-
-			<h:link
-				value="login"
-				outcome="login/login"
-				rendered="#{loginMB.loggedUser == null}" />
-
-			<h:commandLink
-				value="logout"
-				action="#{loginMB.logout}"
-				rendered="#{loginMB.loggedUser != null}" />
-
-		</h:form>
-
-	</h:panelGroup>
-
-
+	<ui:include src="/WEB-INF/menu-composition.xhtml" />
+	
 </h:body>
 
 </html>

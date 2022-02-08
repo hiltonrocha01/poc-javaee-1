@@ -4,7 +4,8 @@
 	lang="pt-br"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
 <meta charset="UTF-8" />
@@ -13,25 +14,9 @@
 
 <h:body>
 
-	<h:panelGrid rendered="#{loginMB.loggedUser != null}">
-		<h:dataTable
-			value="#{loginMB.loggedUser.menus}"
-			var="menu">
-			<h:column>
+	<ui:include src="/WEB-INF/menu-composition.xhtml" />
 
-
-				<!-- 				<a href="#{request.contextPath}#{menu.url}">#{menu.name}</a> -->
-
-				<h:link
-					outcome="#{menu.url}"
-					value="#{menu.name}" />
-
-			</h:column>
-		</h:dataTable>
-
-	</h:panelGrid>
-
-	<h:panelGrid>
+	<h:panelGroup>
 
 		<h:dataTable
 			value="#{userMB.users}"
@@ -58,13 +43,13 @@
 			</h:column>
 		</h:dataTable>
 
-	</h:panelGrid>
+	</h:panelGroup>
 
-	<h:panelGrid>
+	<h:panelGroup>
 		<h:link
 			outcome="/usuario/insert"
 			value="Inserir" />
-	</h:panelGrid>
+	</h:panelGroup>
 
 </h:body>
 

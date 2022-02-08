@@ -26,9 +26,18 @@ public class PersonDAOImpl implements PersonDAO {
 	@Override
 	public void insert(Person person) {
 		EntityTransaction transaction = this.entityManager.getTransaction();
+		
 		transaction.begin();
+		
 		this.entityManager.persist(person);
+
+		//salvar no banco
+		//dar baixa nos produtos
+		//emitir nota fiscal
+		//devolver impressão fiscal
+		
 		transaction.commit();
+		
 	}
 
 }
