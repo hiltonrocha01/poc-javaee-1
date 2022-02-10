@@ -22,25 +22,41 @@
 			value="#{userMB.users}"
 			var="user">
 
-			<h:head>
-				Nome
-			</h:head>
-			<h:head>
-				Documento
-			</h:head>
-			<h:head>
-				Data de Nascimento
-			</h:head>
-
 			<h:column>
+				<f:facet name="header">Nome</f:facet>
 				#{user.name}
 			</h:column>
+
 			<h:column>
+				<f:facet name="header">Documento</f:facet>
 				#{user.document}
 			</h:column>
+
 			<h:column>
+				<f:facet name="header">Data Nascimento</f:facet>
 				#{user.birthDate}
 			</h:column>
+
+			<h:column>
+				<f:facet name="header">Ação</f:facet>
+				<h:form>
+					<h:button
+						value="Alterar"
+						outcome="update">
+						<f:param
+							name="id"
+							value="#{user.name}" />
+					</h:button>
+					<h:button
+						value="Remover"
+						outcome="update">
+						<f:param
+							name="id"
+							value="#{user.name}" />
+					</h:button>
+				</h:form>
+			</h:column>
+
 		</h:dataTable>
 
 	</h:panelGroup>

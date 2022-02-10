@@ -20,6 +20,11 @@ public class UserFormMB {
 		this.personService.save(newUserDTO);
 		return "/usuario/usuarios?faces-redirect=true";
 	}
+	
+	public String update() {
+		this.personService.save(newUserDTO);
+		return "/usuario/usuarios?faces-redirect=true";
+	}
 
 	public NewUserDTO getNewUserDTO() {
 		return newUserDTO;

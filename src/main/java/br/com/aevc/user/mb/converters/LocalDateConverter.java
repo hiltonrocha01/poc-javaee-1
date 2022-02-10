@@ -14,7 +14,8 @@ public class LocalDateConverter implements Converter<LocalDate> {
 
 	@Override
 	public LocalDate getAsObject(FacesContext context, UIComponent component, String value) {
-		return LocalDate.parse(value);
+		String[] split = value.split("/");
+		return LocalDate.parse(String.format("%s-%s-%s", split[2], split[1], split[0]));
 	}
 
 	@Override
