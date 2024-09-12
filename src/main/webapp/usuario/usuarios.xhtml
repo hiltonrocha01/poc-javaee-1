@@ -4,33 +4,69 @@
 	lang="pt-br"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Poc JavaEE</title>
 </head>
 
 <h:body>
 
-	<h:panelGrid rendered="#{loginMB.loggedUser != null}">
+	<ui:include src="/WEB-INF/menu-composition.xhtml" />
+
+	<h:panelGroup>
+
 		<h:dataTable
-			value="#{loginMB.loggedUser.menus}"
-			var="menu">
+			value="#{userMB.users}"
+			var="user">
+
 			<h:column>
-
-				<a href="/poc-javaee#{menu.url}" >#{menu.name}</a>
-
+				<f:facet name="header">Nome</f:facet>
+				#{user.name}
 			</h:column>
+
+			<h:column>
+				<f:facet name="header">Documento</f:facet>
+				#{user.document}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Data Nascimento</f:facet>
+				#{user.birthDate}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Ação</f:facet>
+				<h:form>
+					<h:button
+						value="Alterar"
+						outcome="update">
+						<f:param
+							name="id"
+							value="#{user.name}" />
+					</h:button>
+					<h:button
+						value="Remover"
+						outcome="update">
+						<f:param
+							name="id"
+							value="#{user.name}" />
+					</h:button>
+				</h:form>
+			</h:column>
+
 		</h:dataTable>
 
-	</h:panelGrid>
-	<h:form>
-		
-		<h:outputLabel  for="nome" value="Nome"/>
-		<h:inputText id="nome" value="DIGITE AQUI"/>
-		
-	</h:form>	
+	</h:panelGroup>
+
+	<h:panelGroup>
+		<h:link
+			outcome="/usuario/insert"
+			value="Inserir" />
+	</h:panelGroup>
+
 </h:body>
 
 </html>

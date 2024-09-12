@@ -1,8 +1,9 @@
-package br.com.aevc.login.domain.entity;
+package br.com.aevc.user.domain.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Person {
 	@Column(columnDefinition = "TIMESTAMP")
 	private LocalDateTime updatedAt;
 	
-	@OneToOne(mappedBy = "person")
+	@OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
 	private User user;
 
 	public Long getId() {

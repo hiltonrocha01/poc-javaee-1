@@ -1,0 +1,39 @@
+<ui:composition
+	lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:panelGroup>
+		<ui:fragment rendered="#{loginMB.loggedUser != null}">
+			<ui:repeat
+				var="menu"
+				value="#{loginMB.loggedUser.menus}">
+				<h:link
+					outcome="#{menu.url}"
+					value="#{menu.name}" />
+			</ui:repeat>
+
+			<h:outputText
+				value="Logado como: #{loginMB.loggedUser.name}"
+				rendered="#{loginMB.loggedUser != null}" />
+		</ui:fragment>
+
+		<h:form>
+
+			<h:link
+				value="login"
+				outcome="/login/login"
+				rendered="#{loginMB.loggedUser == null}" />
+
+			<h:commandLink
+				value="logout"
+				action="#{loginMB.logout}"
+				rendered="#{loginMB.loggedUser != null}" />
+
+		</h:form>
+
+	</h:panelGroup>
+
+</ui:composition>

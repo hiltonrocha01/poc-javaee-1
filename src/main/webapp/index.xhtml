@@ -3,46 +3,17 @@
 	lang="pt-br"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Poc JavaEE</title>
 </head>
-
 <h:body>
 
-	<h:panelGrid rendered="#{loginMB.loggedUser != null}">
-		<h:dataTable
-			value="#{loginMB.loggedUser.menus}"
-			var="menu">
-			<h:column>
-
-				<a href="/poc-javaee#{menu.url}" >#{menu.name}</a>
-
-			</h:column>
-		</h:dataTable>
-
-	</h:panelGrid>
-
-	<h:form>
-
-		<h:link
-			value="login"
-			outcome="login/login"
-			rendered="#{loginMB.loggedUser == null}" />
-
-		<h:commandLink
-			value="logout"
-			action="#{loginMB.logout}"
-			rendered="#{loginMB.loggedUser != null}" />
-
-	</h:form>
-
-	<h:outputText
-		value="Logado como: #{loginMB.loggedUser.name}"
-		rendered="#{loginMB.loggedUser != null}" />
-
+	<ui:include src="/WEB-INF/menu-composition.xhtml" />
+	
 </h:body>
 
 </html>

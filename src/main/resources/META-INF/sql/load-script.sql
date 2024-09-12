@@ -14,6 +14,6 @@ INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (2, 2);
 INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (3, 1);
 INSERT INTO PUBLIC.ProfileMenu (profileId, menuId) VALUES (3, 2);
 
-INSERT INTO PUBLIC.Person (id, fullName, document, birthDate, createdAt) VALUES (1, 'Albert Edmélio Viana Costa', '04225778126', '1994-02-01', CURRENT_TIMESTAMP());
+INSERT INTO PUBLIC.Person (id, fullName, document, birthDate, createdAt) VALUES (999999999, 'Albert Edmélio Viana Costa', '04225778126', '1994-02-01', CURRENT_TIMESTAMP());
 
-INSERT INTO PUBLIC.User_ (id, login, password, profileId, personId) VALUES (1, '04225778126', '123456789', 1, 1);
+INSERT INTO PUBLIC.User_ (id, login, password, profileId, personId) VALUES (999999999, '04225778126', '123456789', 1, 999999999);

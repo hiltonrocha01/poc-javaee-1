@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import br.com.aevc.user.domain.entity.User;
+
 @Entity
 public class Profile {
 

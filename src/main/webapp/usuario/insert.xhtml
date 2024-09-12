@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html
+	lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+<meta charset="UTF-8" />
+<title>Poc JavaEE</title>
+
+<script
+	type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.js" />
+	
+<script
+	type="text/javascript"
+	src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+	
+<link
+	rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	
+</h:head>
+
+<h:body>
+
+	<h:outputScript library="js" name="formatDatePicker.js" />
+	
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	
+	<ui:include src="/WEB-INF/menu-composition.xhtml" />
+	
+	<h:panelGroup>
+
+		<h:form>
+
+			<h:outputLabel
+				for="fullName"
+				value="Nome completo: " />
+			<h:inputText
+				id="fullName"
+				value="#{userFormMB.newUserDTO.fullName}" />
+
+			<h:outputLabel
+				for="document"
+				value="Documento: " />
+			<h:inputText
+				id="document"
+				value="#{userFormMB.newUserDTO.document}" />
+
+			<h:outputLabel
+				for="birthDate"
+				value="Data Nascimento: ">
+			</h:outputLabel>
+
+			<h:inputText
+				id="birthDate"
+				value="#{userFormMB.newUserDTO.birthDate}" styleClass="datepicker">
+				<f:validator validatorId="dataNascimentoValidator"></f:validator>
+				
+				<f:converter converterId="localDateConverter" />
+				
+			</h:inputText>
+
+			<h:message
+				for="birthDate"
+				style="color:red;" />
+
+			<h:outputLabel
+				for="password"
+				value="Senha: " />
+			<h:inputSecret
+				id="password"
+				value="#{userFormMB.newUserDTO.password}" />
+
+			<h:commandButton action="#{userFormMB.save}" />
+		</h:form>
+
+	</h:panelGroup>
+
+	<h:panelGroup>
+		<h:link
+			outcome="/usuario/usuarios"
+			value="Listagem" />
+	</h:panelGroup>
+
+</h:body>
+
+</html>
